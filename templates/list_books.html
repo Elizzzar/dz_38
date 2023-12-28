@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load thumbnail %}
+
+{% block content %}
+
+{% for book in books %}
+    <a href="{% url 'detail_book' book.id %}" style="display: flex; align-items: center; gap: 15px; margin: 20px;">
+        <img src="{{ book.cover|thumbnail_url:'aaa' }}" alt="{{ book.title }}" > 
+        {{ book.title }} 
+    </a>
+{% endfor %}
+
+{% endblock %}
